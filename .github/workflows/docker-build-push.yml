@@ -32,5 +32,7 @@ jobs:
         docker build -t gaurdocker/hello-world:$IMAGE_TAG .
 
     - name: Push Docker image
+      env:
+        IMAGE_TAG: ${{ env.commit_hash }}
       run: |
         docker push gaurdocker/hello-world:$IMAGE_TAG
