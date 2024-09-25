@@ -19,11 +19,11 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
     - name: Get commit hash
-        id: get-commit-hash
-        run: echo "commit_hash=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+      id: get-commit-hash
+      run: echo "commit_hash=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
     - name: Get timestamp
-        id: get-timestamp
-        run: echo "timestamp=$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV
+      id: get-timestamp
+      run: echo "timestamp=$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV
     - name: Build Docker image
       env:
         IMAGE_TAG: ${{ env.commit_hash }}-${{ env.timestamp }}
