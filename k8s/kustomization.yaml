@@ -5,4 +5,4 @@ resources:
 - service.yaml
 images:
 - name: gaurdocker/hello-world
-  newTag: 3971d6d
+  newTag: 3b14cef
